@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      INICIO
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">INICIO</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!--///////////////////////////////////////////////////////-->
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> IMPUESTOS </ion-card-title>
+    </ion-card-header>
+
+  </ion-card> 
+  <ion-card-content>
+
+    <!-- Entrada de tipo de número -->
+    <ion-item>
+      <ion-label> Monto del impuesto: </ion-label>
+      <ion-input [(ngModel)]="dato1" type="number" value="0"></ion-input>
+    </ion-item>
+
+    <!-- button da resultado -->    
+    <ion-button color="primary" (click)="calcularSuma()" expand="block" fill="outline"> Calcular </ion-button>
+    
+    <!-- salidas de los resultados -->
+    <ion-item >
+      IVA:  
+      <div *ngIf="suma1">
+        {{ suma1 }}
+      </div>
+    </ion-item>
+
+    <ion-item>
+      IT: 
+      <div *ngIf="suma2">
+        {{  suma2 }}
+      </div>
+    </ion-item>
+    
+    <ion-item>
+      UTILIDAD: 
+      <div *ngIf="utilidad">
+        {{ utilidad }}
+      </div>
+    </ion-item>
+    
+  </ion-card-content>
+
+
+</ion-content>
